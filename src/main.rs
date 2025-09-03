@@ -3,6 +3,8 @@
 //#![allow(non_snake_case)]
 //include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
+use cxx::let_cxx_string;
+
 #[cxx::bridge]
 mod ffi {
     unsafe extern "C++" {
@@ -11,6 +13,7 @@ mod ffi {
         include!("snes-wasm/snes9x/messages.h");
 
         fn S9xUsage();
+        //unsafe fn S9xMessage(info: i32, usage: i32, description: *const c_char);
     }
 
     extern "Rust" {
