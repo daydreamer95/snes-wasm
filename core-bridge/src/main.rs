@@ -3,8 +3,6 @@
 //#![allow(non_snake_case)]
 //include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-use cxx::let_cxx_string;
-
 #[cxx::bridge]
 mod ffi {
     unsafe extern "C++" {
@@ -23,7 +21,7 @@ mod ffi {
 
 fn rust_s9x_message(info: i32, usage: i32, description: &str) {
     println!(
-        "S9xMessage called: info={} usage={} description={}",
+        "S9xMessage called from rust: info={} usage={} description={}",
         info, usage, description
     );
 }
@@ -31,5 +29,5 @@ fn rust_s9x_message(info: i32, usage: i32, description: &str) {
 fn main() {
     println!("Hello world from main!");
 
-    let client = ffi::S9xUsage();
+    ffi::S9xUsage();
 }
