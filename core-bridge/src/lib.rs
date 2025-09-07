@@ -4,7 +4,7 @@
 //include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 #[cxx::bridge]
-mod ffi {
+pub mod ffi {
     unsafe extern "C++" {
         include!("snes-wasm/snes9x/display.h");
         include!("snes-wasm/snes9x/snes9x.h");
@@ -24,10 +24,4 @@ fn rust_s9x_message(info: i32, usage: i32, description: &str) {
         "S9xMessage called from rust: info={} usage={} description={}",
         info, usage, description
     );
-}
-
-fn main() {
-    println!("Hello world from main!");
-
-    ffi::S9xUsage();
 }

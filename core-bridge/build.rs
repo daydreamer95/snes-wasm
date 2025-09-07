@@ -1,6 +1,6 @@
 fn main() {
     println!("cargo:rustc-link-search=native=snes9x");
-    cxx_build::bridge("src/main.rs")
+    cxx_build::bridge("src/lib.rs")
         .file("snes9x/snes9x.cpp")
         .file("src/include/messages.cpp")
         .include("snes9x") // Add include directory for snes9x headers

@@ -3,6 +3,11 @@ name = "core-bridge"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "core_bridge_lib"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
 cxx = "1.0.0"
 libc = "0.2"

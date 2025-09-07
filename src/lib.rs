@@ -1,5 +1,4 @@
 use wasm_bindgen::prelude::*;
-
 #[wasm_bindgen(start)]
 fn run() {
     bare_bones();
@@ -27,6 +26,13 @@ extern "C" {
     // Multiple arguments too!
     #[wasm_bindgen(js_namespace = console, js_name = log)]
     fn log_many(a: &str, b: &str);
+
+    fn alert(s: &str);
+}
+
+#[wasm_bindgen]
+pub fn greet(name: &str) {
+    alert(&format!("Hello, {name}!"));
 }
 
 fn bare_bones() {
