@@ -6,9 +6,9 @@
 #[cxx::bridge]
 pub mod ffi {
     unsafe extern "C++" {
-        include!("snes-wasm/snes9x/display.h");
-        include!("snes-wasm/snes9x/snes9x.h");
-        include!("snes-wasm/snes9x/messages.h");
+        include!("core_bridge/snes9x/display.h");
+        include!("core_bridge/snes9x/snes9x.h");
+        include!("core_bridge/snes9x/messages.h");
 
         fn S9xUsage();
         //unsafe fn S9xMessage(info: i32, usage: i32, description: *const c_char);

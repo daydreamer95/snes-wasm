@@ -1,7 +1,8 @@
 [package]
-name = "core-bridge"
+name = "core_bridge"
 version = "0.1.0"
 edition = "2024"
+links= "core_bridge"
 
 [lib]
 name = "core_bridge_lib"

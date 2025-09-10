@@ -1,4 +1,6 @@
+//use core_bridge_lib::ffi::*;
 use wasm_bindgen::prelude::*;
+
 #[wasm_bindgen(start)]
 fn run() {
     bare_bones();
@@ -34,6 +36,11 @@ extern "C" {
 pub fn greet(name: &str) {
     alert(&format!("Hello, {name}!"));
 }
+
+//#[wasm_bindgen]
+//pub fn s9x_usage() {
+//    S9xUsage();
+//}
 
 fn bare_bones() {
     log("Hello from Rust!");

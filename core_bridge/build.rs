@@ -5,10 +5,11 @@ fn main() {
         .file("src/include/messages.cpp")
         .include("snes9x") // Add include directory for snes9x headers
         .std("c++14")
-        .compile("snes9-wasm");
+        .compile("core_bridge");
 
     println!("cargo:rerun-if-changed=snes9x/snes9x.h");
     println!("cargo:rerun-if-changed=snes9x/display.h");
     println!("cargo:rerun-if-changed=snes9x/messages.h");
     println!("cargo:rerun-if-changed=src/.");
+    println!("cargo:rustc-link-lib=dylib=core_bridge");
 }
